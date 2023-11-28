@@ -18,20 +18,21 @@ public class cap_so_nguyen_to_trong_file_1_J07030 {
         ObjectInputStream input2 = new ObjectInputStream(new FileInputStream("DATA2.in"));
         ArrayList<Integer> arr1 = (ArrayList<Integer>) input1.readObject();
         ArrayList<Integer> arr2 = (ArrayList<Integer>) input2.readObject(); 
+
         TreeSet<Integer> set1 = new TreeSet<>();
         TreeSet<Integer> set2 = new TreeSet<>();
         for(int x : arr1){
-            if(x < 1000000/2){
+            if(isPrime(x) && x < 1000000/2){
                 set1.add(x);
             }
         }
         for(int x : arr2){
-            if(x > 1000000/2){
+            if(isPrime(x) && x > 1000000/2){
                 set2.add(x);
             }
         }
         for(int x : set1){
-            if(isPrime(x) && set2.contains(1000000 - x) && isPrime(1000000 - x)){
+            if(set2.contains(1000000 - x)){
                 System.out.println(x + " " + (1000000- x));
             }
         }

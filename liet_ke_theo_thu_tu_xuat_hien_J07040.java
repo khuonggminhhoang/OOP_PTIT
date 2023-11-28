@@ -9,6 +9,7 @@ public class liet_ke_theo_thu_tu_xuat_hien_J07040 {
     public static void main(String[] args) throws Exception{
         ObjectInputStream input = new ObjectInputStream(new FileInputStream("NHIPHAN.in"));
         ArrayList<String> arr = (ArrayList<String>) input.readObject();
+
         HashSet<String> set = new HashSet<>();
         for(String x : arr){
             String[] a = x.trim().split("\\s+");

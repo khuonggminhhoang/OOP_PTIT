@@ -5,47 +5,36 @@ import java.util.Scanner;
 import java.util.Comparator;
 
 class NhanVien{
-    static HashMap<String, Integer> map = new HashMap<>();
     private String id, name;
 
     public NhanVien(String id, String name) {
+        int soHieu = Integer.parseInt(id.substring(4));
         if(id.substring(0,2).equals("GD")){
-            if(!map.containsKey("GD")){
-                map.put("GD", 1);
-            }
-            else {
+            if(soHieu > 1){
                 id = "NV" + id.substring(2);
             }
         }
         else if(id.substring(0, 2).equals("TP")){
-            if(!map.containsKey("TP")){
-                map.put("TP", 1);
-            }
-            else if(map.get("TP") > 2){
+            if(soHieu > 3){
                 id = "NV" + id.substring(2);
-            }
-            else{
-                map.put(id.substring(0,2), map.get(id.substring(0,2)) + 1);
             }
         }
         else if(id.substring(0, 2).equals("PP")){
-            if(!map.containsKey("PP")){
-                map.put("PP", 1);
-            }
-            else if(map.get("PP") > 2){
+            if(soHieu > 3){
                 id = "NV" + id.substring(2);
-            }
-            else{
-                map.put(id.substring(0,2), map.get(id.substring(0,2)) + 1);
             }
         }
         
         this.id = id;
-        this.name = name.trim();
+        this.name = name;
     }
 
     public String getId(){
         return this.id;
+    }
+
+    public String getName(){
+        return this.name;
     }
 
     @Override
@@ -54,14 +43,17 @@ class NhanVien{
     }
 }
 
-public class liet_ke_nhan_vien_theo_nhom_J05065 {
+public class tim_kiem_nhan_vien_theo_ten_J05066 {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int t = scn.nextInt();
         scn.nextLine();
         ArrayList<NhanVien> arr = new ArrayList<>();
         while(t-- >0){
-            arr.add(new NhanVien(scn.next(), scn.nextLine()));
+            String s = scn.nextLine();
+            String id = s.substring(0,7);
+            String name = s.substring(8);
+            arr.add(new NhanVien(id, name));
         }   
         Collections.sort(arr, new Comparator<NhanVien>(){
             @Override
@@ -76,9 +68,9 @@ public class liet_ke_nhan_vien_theo_nhom_J05065 {
         });
         int q = Integer.parseInt(scn.nextLine());
         while(q-- > 0){
-            String pos = scn.nextLine();
+            String abb = scn.nextLine().toLowerCase();
             for(NhanVien x : arr){
-                if(x.getId().substring(0,2).equals(pos))
+                if(x.getName().toLowerCase().contains(abb))
                     System.out.println(x);
             }
             System.out.println();

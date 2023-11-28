@@ -7,7 +7,7 @@ public class J01001 {
         int b = scn.nextInt(); 
         if(a <= 0 || b <= 0){
             System.out.println(0);
-            return;
+            return ;
         }
         System.out.print((a+b)*2 + " ");
         System.out.print(a*b);
