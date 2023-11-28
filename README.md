@@ -2,6 +2,7 @@
 # Hoang Minh Khuong
 
 | Mã bài tập | Tên bài tập |
+|------------|-------------|
 | CHELLO | Hello World |
 | HELLOFILE | HELLO FILE |
 | HELLOJAR | HỌC PHÍ |
