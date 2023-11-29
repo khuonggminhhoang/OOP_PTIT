@@ -1,5 +1,4 @@
-# OOP_PTIT
-# Hoang Minh Khuong
+# OOP_PTIT by Hoàng Minh Khương
 
 | Mã bài tập | Tên bài tập |
 |------------|-------------|
