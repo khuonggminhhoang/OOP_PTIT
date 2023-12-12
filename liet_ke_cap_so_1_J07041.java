@@ -1,26 +1,16 @@
+package test;
+
 import java.io.*;
 import java.util.*;
 
-class Pair implements Serializable, Comparable<Pair>{
-    private int first, second;
-    public Pair(int first, int second){
-        this.first = first;
-        this.second = second;
-    }
-    public int getFirst(){
-        return first;
-    }
-    public int getSecond(){
-        return second;
-    }
-    public int compareTo(Pair o){
-        return this.first - o.first;
-    }
-    public String toString(){
-        return "(" + first + ", " + second + ")";
-    }
-}
+/*
+ *   Note: bài này muốn ac phải nén zip
+ */
 
+/**
+ *
+ * @author Hoang Minh Khuong
+ */
 public class liet_ke_cap_so_1_J07041 {
     public static void main(String[] args) throws Exception{
         FileInputStream inpStream = new FileInputStream("DATA.in");
